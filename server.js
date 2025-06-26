@@ -4,13 +4,13 @@ const mysql = require('mysql2');
 const cors = require('cors');
 const compression = require('compression');
 const ExcelJS = require("exceljs");
+const app = express();
 
 // ✅ Allow your frontend on GitHub Pages
 app.use(cors({
   origin: 'https://zaid444-max.github.io'
 }));
 
-const app = express();
 app.use(cors());  // Allow requests from other devices
 app.use(compression());
 // Increase limit to, say, 20MB
