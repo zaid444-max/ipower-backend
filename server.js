@@ -42,6 +42,12 @@ console.log('MySQL pool initialized');
 app.get('/health', (req, res) => {
   res.send('OK');
 });
+
+app.use((err, req, res, next) => {
+  console.error('Unhandled error:', err);
+  res.status(500).json({ error: 'Internal Server Error' });
+});
+
   
 // Items:-----------
 
