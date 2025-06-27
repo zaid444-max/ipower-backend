@@ -8,10 +8,11 @@ const app = express();
 
 // ✅ Allow your frontend on GitHub Pages
 app.use(cors({
-  origin: 'https://zaid444-max.github.io'
+  origin: 'https://zaid444-max.github.io', // allow your frontend URL here
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // allowed methods
+  credentials: true // if you want to allow cookies/auth headers
 }));
 
-app.use(cors());  // Allow requests from other devices
 app.use(compression());
 // Increase limit to, say, 20MB
 app.use(express.json({ limit: "20mb" }));
